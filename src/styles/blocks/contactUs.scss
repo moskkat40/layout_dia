@@ -50,6 +50,9 @@
       background: transparent;
       border-bottom: 1px solid $text-color-white;
       color: $text-color-white;
+      &--textarea {
+        resize: none;
+      }
       &::placeholder {
         font-weight: 600;
         font-size: 15px;

@@ -41,25 +41,27 @@ const burgerClose = document.querySelector('.burger__close');
 const burgerOpen = document.querySelector('.top-bar__open');
 const burgerMenu = document.querySelector('.burger');
 const topBarIcon = document.querySelector('.burger__logo');
-const topBarHire = document.querySelector('.burger__hire');
+const topBarHire = document.querySelector('.top-bar__hire');
+const page = document.querySelector('.page__body');
 
 burgerOpen.addEventListener('click', () => {
   burgerMenu.style.display = 'block';
+  page.style.overflow = 'hidden';
 });
 
 burgerClose.addEventListener('click', () => {
   burgerMenu.style.display = 'none';
+  page.style.overflow = 'auto';
 });
 
-if (window.matchMedia("(max-width: 1023px)").matches) {
-  burgerMenu.addEventListener('click', (event) => {
-    if(event.target) {
-      burgerMenu.style.display = 'none';
-      topBarIcon.style.display = 'block';
-      topBarHire.style.display = 'block';
-    }
-  });
-}
+burgerMenu.addEventListener('click', (event) => {
+  if(event.target) {
+    burgerMenu.style.display = 'none';
+    topBarIcon.style.display = 'block';
+    topBarHire.style.display = 'block';
+    page.style.overflow = 'auto';
+  }
+});
 
 
 //change theme
